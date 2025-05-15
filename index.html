@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Profile Layout</title>
+<style>
+  /* Import a cool modern font */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: #f0f0f0;
+  }
+
+  .container {
+    flex: 1 0 auto;
+    max-width: 900px;
+    margin: 40px auto 100px;
+    padding: 20px;
+    background: rgba(255 255 255 / 0.05);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  /* 1. Profile section */
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #66ccff;
+    box-shadow: 0 0 15px #66ccff88;
+    background: #222;
+  }
+
+  .profile-desc {
+    font-size: 1.15rem;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  /* 2. Text I, Text II, Text III */
+  .text-row-3 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+
+  .text-block {
+    flex: 1;
+    background: #334972cc;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px #00000077;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+  }
+  .text-block:hover {
+    background: #66ccffcc;
+    color: #182848;
+    cursor: default;
+  }
+
+  /* 3. Text IV, Text V centered */
+  .text-row-2 {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .text-row-2 .text-block {
+    flex: 0 0 45%;
+  }
+
+  /* 4. Images row */
+  .images-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+  .image-container {
+    flex: 1;
+    background: #334972cc;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px #00000077;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+  }
+  .image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #000000aa;
+    transition: transform 0.3s ease;
+  }
+  .image-container img:hover {
+    transform: scale(1.05);
+  }
+  .image-caption {
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  /* 5. Contacts bottom left */
+  footer {
+    flex-shrink: 0;
+    background: #182848ee;
+    padding: 20px 40px;
+    color: #99cfff;
+    font-weight: 600;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    border-top-right-radius: 16px;
+    box-shadow: 3px -3px 10px #00000099;
+  }
+
+  footer h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #66ccff;
+  }
+
+  footer ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  footer ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Simple icons using Unicode for demo */
+  .icon {
+    font-size: 1.3rem;
+    color: #66ccff;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 720px) {
+    .container {
+      margin: 24px 12px 120px;
+    }
+    .profile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+    .text-row-3 {
+      flex-direction: column;
+    }
+    .text-row-3 .text-block {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    .text-row-2 {
+      flex-direction: column;
+      align-items: center;
+    }
+    .text-row-2 .text-block {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    .images-row {
+      flex-direction: column;
+    }
+    .image-container {
+      margin-bottom: 16px;
+    }
+    footer {
+      position: static;
+      width: auto;
+      border-radius: 0;
+      box-shadow: none;
+      margin-top: 40px;
+      padding-left: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 1. Profile -->
+  <section class="profile" aria-label="Profil">
+    <img class="profile-photo" src="IMG_20230408_170923.jpg" alt="Foto Profil" />
+    <div class="profile-desc">
+      <h1>Owen Kabungsina</h1>
+      <p>MAHASISWA INFORMATIKA."</p>
+    </div>
+  </section>
+
+  <!-- 2. Text I, II, III -->
+  <section class="text-row-3" aria-label="Teks bagian kedua">
+    <div class="text-block">
+        <h1>Biodata Diri</h1>
+        <p>Nama: Owen Y Kabungsina</p>
+        <p>Tempat, Tanggal Lahir : wulmasa, 05-November-2005</p>
+    </div>
+    <div class="text-block">
+        <h2>Pernah Belajar Di</h2>
+        <p>1. SD Kristen Wulmasa</p>
+        <p>2. SMP Negeri 2 Tanimbar Utara</p>
+        <p>3. SMA Negeri 23 Maluku Tengah</p>
+    </div>
+    <div class="text-block">
+        <h3>Tatus Saya dalam keluarga</h3>
+         <p>Anak Pertama Dari 5 Bersaudara</p>
+    </div>
+  </section>
+
+  <!-- 3. Text IV, V -->
+  <section class="text-row-2" aria-label="Teks bagian ketiga">
+    <div class="text-block">
+        <h1>Sekarang saya melanjutkan pendidikan saya ke jenjang perkuliahan</h1>
+        <p>Di Universitas Kristen Indonesia Maluku</p>
+        <p>Fakulta Ilmu Komputer</p>
+        <p>Programstudi Informatika</p>
+    </div>
+    <div class="text-block">
+        <h1>hobi saya</h1>
+        <p>1. Tenis Meja</p>
+        <p>1. Bola Volly</p>
+        <p>1. Game</p>
+         <p> Berikut Ada Beberapa Cuplikan game Yang Biasa Saya Main</p>
+    </div>
+  </section>
+
+  <!-- 4. Gambar 1, 2, 3 -->
+  <section class="images-row" aria-label="Gambar">
+    <div class="image-container">
+      <img src="Gambar WhatsApp 2025-05-15 pukul 07.26.59_4262834e.jpg" alt="Gambar 1" />
+      <div class="image-caption">Gambar 1</div>
+    </div>
+    <div class="image-container">
+      <img src="Gambar WhatsApp 2025-05-15 pukul 07.27.00_d94c6273.jpg" alt="Gambar 2" />
+      <div class="image-caption">Gambar 2</div>
+    </div>
+    <div class="image-container">
+      <img src="Gambar WhatsApp 2025-05-15 pukul 07.28.26_f2908236.jpg" alt="Gambar 3" />
+      <div class="image-caption">Gambar 3</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- 5. Kontak kiri bawah -->
+<footer aria-label="Kontak">
+  <h2>Kontak</h2>
+  <ul>
+    <li><span class="icon">&#9993;</span> <a href="owenkabungsina@gmail.com" target="_blank" rel="noopener noreferrer">Gmail</a></li>
+    <li><span class="icon">&#x1F4F7;</span> <a href="Instagram:https://tinyurl.com/5n85f8tw" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    <li><span class="icon">&#x2706;</span> <a href="WhatsApp:https://wa.me/6281225165324" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+    <li><span class="icon">&#x1F465;</span> <a href="https://tinyurl.com/yn28xcxp" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
+
